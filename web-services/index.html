@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daniel Fanto | Website Design for SMBs — 3 Free Landing Pages</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0a0f; --surface: #111118; --surface2: #16161f;
+  --border: rgba(255,255,255,0.08); --border-bright: rgba(255,255,255,0.15);
+  --text: #e8e8f0; --text-muted: #ffffff; --text-dim: #ffffff;
+  --accent: #6366f1; --accent2: #a78bfa; --gold: #f0a832; --white: #ffffff;
+  --heading: 'Sora', sans-serif; --body: 'Source Sans 3', sans-serif; --mono: 'IBM Plex Mono', monospace;
+  --radius: 12px; --max: 1200px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--body); font-size: clamp(1rem,1.1vw,1.0625rem); line-height: 1.7; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.1rem 2rem; display: flex; align-items: center; justify-content: space-between; background: rgba(10,10,15,0.85); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+.nav-logo { font-family: var(--heading); font-weight: 700; font-size: 1.05rem; color: var(--white); letter-spacing: -0.02em; }
+.nav-logo span { color: var(--accent); }
+.nav-cta { background: var(--accent); color: var(--white); font-family: var(--heading); font-weight: 600; font-size: 0.85rem; padding: 0.6rem 1.4rem; border-radius: 6px; text-decoration: none; transition: background 0.2s; }
+.nav-cta:hover { background: #4f52e0; }
+.hero { min-height: 90vh; display: flex; flex-direction: column; justify-content: center; padding: 8rem 2rem 4rem; position: relative; overflow: hidden; text-align: center; }
+.hero-bg { position: absolute; inset: 0; z-index: 0; background: radial-gradient(ellipse 70% 60% at 50% 20%, rgba(99,102,241,0.2) 0%, transparent 60%); }
+.hero-inner { position: relative; z-index: 1; max-width: 780px; margin: 0 auto; }
+.hero-label { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--mono); font-size: 0.75rem; color: var(--accent2); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.5rem; }
+h1 { font-family: var(--heading); font-weight: 800; font-size: clamp(2.6rem,6vw,4.6rem); line-height: 1.08; letter-spacing: -0.03em; color: var(--white); margin-bottom: 1.5rem; text-wrap: balance; }
+h1 em { font-style: normal; background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 60%, var(--gold) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.hero-sub { font-size: clamp(1.05rem,1.5vw,1.2rem); color: var(--text-muted); max-width: 620px; margin: 0 auto 2.5rem; line-height: 1.7; }
+.btn-primary { background: var(--accent); color: var(--white); font-family: var(--heading); font-weight: 600; font-size: 0.95rem; padding: 0.9rem 2.1rem; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 20px rgba(99,102,241,0.3); }
+.btn-primary:hover { background: #4f52e0; transform: translateY(-2px); }
+.btn-ghost { background: transparent; color: var(--text); font-family: var(--heading); font-weight: 600; font-size: 0.95rem; padding: 0.9rem 2.1rem; border-radius: 8px; text-decoration: none; border: 1px solid var(--border-bright); display: inline-flex; align-items: center; gap: 0.5rem; transition: border-color 0.2s, color 0.2s; }
+.btn-ghost:hover { border-color: var(--accent); color: var(--white); }
+.hero-ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.trust-note { font-family: var(--mono); font-size: 0.75rem; color: var(--text-dim); letter-spacing: 0.05em; }
+.trust-note span { color: var(--gold); }
+
+.section { padding: 6rem 2rem; }
+.container { max-width: var(--max); margin: 0 auto; }
+.label { font-family: var(--mono); font-size: 0.7rem; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1rem; text-align:center; }
+h2 { font-family: var(--heading); font-weight: 800; font-size: clamp(2rem,4.5vw,3.2rem); line-height: 1.1; letter-spacing: -0.03em; color: var(--white); margin-bottom: 1.5rem; text-align:center; text-wrap: balance; }
+.lead { font-size: 1.05rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 3.5rem; line-height: 1.7; text-align:center; }
+
+.offer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.offer-card { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; text-align: center; transition: border-color 0.2s, transform 0.2s; }
+.offer-card:hover { border-color: var(--border-bright); transform: translateY(-3px); }
+.offer-num { font-family: var(--mono); font-size: 0.7rem; color: var(--text-dim); letter-spacing: 0.08em; margin-bottom: 1rem; }
+.offer-card h3 { font-family: var(--heading); font-weight: 700; font-size: 1.1rem; color: var(--white); margin-bottom: 0.6rem; }
+.offer-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+
+.included-section { background: var(--surface); }
+.included-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
+.inc-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; }
+.inc-card h4 { font-family: var(--heading); font-weight: 700; font-size: 0.98rem; color: var(--white); margin-bottom: 0.5rem; }
+.inc-card p { font-size: 0.87rem; color: var(--text-muted); line-height: 1.6; }
+
+.upsell-section { text-align: center; }
+.upsell-card { background: linear-gradient(135deg, #0d0d1a 0%, #141430 100%); border: 1px solid rgba(99,102,241,0.3); border-radius: 20px; padding: 3.5rem 2.5rem; max-width: 640px; margin: 0 auto; }
+.upsell-card h3 { font-family: var(--heading); font-weight: 800; font-size: 1.6rem; color: var(--white); margin-bottom: 1rem; }
+.upsell-card p { color: var(--text-muted); font-size: 0.98rem; line-height: 1.7; max-width: 480px; margin: 0 auto 2rem; }
+.upsell-price { font-family: var(--heading); font-size: 2.4rem; font-weight: 900; color: var(--white); letter-spacing: -0.03em; margin-bottom: 0.3rem; }
+.upsell-price span { font-size: 0.95rem; color: var(--text-dim); font-weight: 400; }
+.upsell-note { font-family: var(--mono); font-size: 0.68rem; color: var(--gold); margin-bottom: 1.75rem; }
+
+footer { border-top: 1px solid var(--border); padding: 2.5rem 2rem; text-align: center; color: var(--text-dim); font-size: 0.8rem; }
+
+@media (max-width: 1024px) { .offer-grid { grid-template-columns: 1fr; } }
+@media (max-width: 768px) { .nav-links { display: none; } .section { padding: 4.5rem 1.5rem; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Daniel <span>Fanto</span> — Web</div>
+  <a href="#claim" class="nav-cta">Claim Free Pages</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-label">— Website Services for Small Businesses</div>
+    <h1>Get <em>3 Free Landing Pages</em><br>Built for Your Business.</h1>
+    <p class="hero-sub">No catch, no obligation. I'll build three real, working landing pages for your business — so you can see exactly what a properly built site does for your leads before you spend a dollar.</p>
+    <div class="hero-ctas">
+      <a href="#claim" class="btn-primary">Claim Your 3 Free Pages →</a>
+      <a href="#full-build" class="btn-ghost">See Full Website Packages</a>
+    </div>
+    <p class="trust-note"><span>✓</span> No cost &nbsp;&nbsp;<span>✓</span> No obligation to buy anything after</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="label">What You Get, Free</div>
+    <h2>Three Real Pages. Zero Cost.</h2>
+    <p class="lead">Most agencies lead with a pitch deck. I'd rather just show you the work — three fully built, functional landing pages for your actual business.</p>
+    <div class="offer-grid">
+      <div class="offer-card">
+        <div class="offer-num">01</div>
+        <h3>Homepage / Main Landing Page</h3>
+        <p>A clean, conversion-focused page that actually explains what you do and why someone should choose you.</p>
+      </div>
+      <div class="offer-card">
+        <div class="offer-num">02</div>
+        <h3>Service or Offer Page</h3>
+        <p>A dedicated page for your core service or offer, built to turn visitors into leads.</p>
+      </div>
+      <div class="offer-card">
+        <div class="offer-num">03</div>
+        <h3>Contact / Booking Page</h3>
+        <p>A simple, frictionless way for people to actually reach you or book time on your calendar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section included-section">
+  <div class="container">
+    <div class="label">What's Included</div>
+    <h2>Real Pages, Not a Mockup.</h2>
+    <p class="lead">These aren't wireframes or Figma files — they're real, live, working pages you can actually use.</p>
+    <div class="included-grid">
+      <div class="inc-card"><h4>Fully Responsive Design</h4><p>Looks right on phones, tablets, and desktop — not an afterthought.</p></div>
+      <div class="inc-card"><h4>Fast, Clean Hosting</h4><p>Live and fast from day one — no bloated page-builder slowdown.</p></div>
+      <div class="inc-card"><h4>Real Copy, Not Lorem Ipsum</h4><p>Written around your actual business, not generic filler text.</p></div>
+      <div class="inc-card"><h4>Built-In Contact/Booking</h4><p>A working way for leads to actually reach you, wired in from the start.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section upsell-section" id="full-build">
+  <div class="container">
+    <div class="label">Beyond the Free Pages</div>
+    <h2>Want a Full Site Built &amp; Maintained?</h2>
+    <div class="upsell-card">
+      <h3>Full Website Build &amp; Care Plan</h3>
+      <p>A complete multi-page website, built and maintained on an ongoing basis — updates, hosting, and support included, so you never have to think about it again.</p>
+      <div class="upsell-price">$XXX<span>/month</span></div>
+      <div class="upsell-note">Placeholder price — confirm before publishing</div>
+      <a href="https://your-checkout-link.com/website-package" target="_blank" class="btn-primary">Get Started →</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="claim" style="text-align:center;">
+  <div class="container">
+    <div class="label">Claim Your Free Pages</div>
+    <h2>Let's Build Yours.</h2>
+    <p class="lead">Tell me a bit about your business and I'll start building your three free pages.</p>
+    <a href="mailto:daniel@danielfanto.com?subject=Claim my 3 free landing pages" class="btn-primary">Claim Your 3 Free Pages →</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Daniel Fanto — Website Services</p>
+</footer>
+
+</body>
+</html>

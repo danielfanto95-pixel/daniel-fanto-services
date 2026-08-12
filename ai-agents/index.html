@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daniel Fanto | Marketing & AI Services for SMBs</title>
+<title>Daniel Fanto | AI Agents & Implementation for SMBs</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -24,15 +24,17 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.1rem 
 .nav-logo span { color: var(--accent); }
 .nav-cta { background: var(--accent); color: var(--white); font-family: var(--heading); font-weight: 600; font-size: 0.85rem; padding: 0.6rem 1.4rem; border-radius: 6px; text-decoration: none; transition: background 0.2s; }
 .nav-cta:hover { background: #4f52e0; }
-.hero { min-height: 85vh; display: flex; flex-direction: column; justify-content: center; padding: 8rem 2rem 4rem; position: relative; overflow: hidden; text-align: center; }
+.hero { min-height: 88vh; display: flex; flex-direction: column; justify-content: center; padding: 8rem 2rem 4rem; position: relative; overflow: hidden; text-align: center; }
 .hero-bg { position: absolute; inset: 0; z-index: 0; background: radial-gradient(ellipse 70% 60% at 50% 20%, rgba(99,102,241,0.2) 0%, transparent 60%); }
 .hero-inner { position: relative; z-index: 1; max-width: 820px; margin: 0 auto; }
 .hero-label { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--mono); font-size: 0.75rem; color: var(--accent2); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.5rem; }
 h1 { font-family: var(--heading); font-weight: 800; font-size: clamp(2.6rem,6vw,4.6rem); line-height: 1.08; letter-spacing: -0.03em; color: var(--white); margin-bottom: 1.5rem; text-wrap: balance; }
 h1 em { font-style: normal; background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 60%, var(--gold) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.hero-sub { font-size: clamp(1.05rem,1.5vw,1.2rem); color: var(--text-muted); max-width: 650px; margin: 0 auto 2.5rem; line-height: 1.7; }
+.hero-sub { font-size: clamp(1.05rem,1.5vw,1.2rem); color: var(--text-muted); max-width: 640px; margin: 0 auto 2.5rem; line-height: 1.7; }
 .btn-primary { background: var(--accent); color: var(--white); font-family: var(--heading); font-weight: 600; font-size: 0.95rem; padding: 0.9rem 2.1rem; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 20px rgba(99,102,241,0.3); }
 .btn-primary:hover { background: #4f52e0; transform: translateY(-2px); }
+.trust-note { font-family: var(--mono); font-size: 0.75rem; color: var(--text-dim); letter-spacing: 0.05em; margin-top: 1.5rem; }
+.trust-note span { color: var(--gold); }
 
 .section { padding: 6rem 2rem; }
 .container { max-width: var(--max); margin: 0 auto; }
@@ -40,16 +42,24 @@ h1 em { font-style: normal; background: linear-gradient(135deg, var(--accent) 0%
 h2 { font-family: var(--heading); font-weight: 800; font-size: clamp(2rem,4.5vw,3.2rem); line-height: 1.1; letter-spacing: -0.03em; color: var(--white); margin-bottom: 1.5rem; text-align:center; text-wrap: balance; }
 .lead { font-size: 1.05rem; color: var(--text-muted); max-width: 620px; margin: 0 auto 3.5rem; line-height: 1.7; text-align:center; }
 
-.services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-.service-card { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius); padding: 2.5rem; transition: border-color 0.2s, transform 0.2s; display:flex; flex-direction:column; }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.service-card { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius); padding: 2.25rem; transition: border-color 0.2s, transform 0.2s; }
 .service-card:hover { border-color: var(--border-bright); transform: translateY(-3px); }
-.service-tag { font-family: var(--mono); font-size: 0.68rem; color: var(--accent2); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem; }
-.service-card h3 { font-family: var(--heading); font-weight: 700; font-size: 1.35rem; color: var(--white); margin-bottom: 0.9rem; letter-spacing: -0.01em; }
-.service-card p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.5rem; flex-grow: 1; }
-.service-link { font-family: var(--heading); font-size: 0.88rem; font-weight: 700; color: var(--accent2); text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; }
-.service-link:hover { gap: 0.7rem; }
+.service-icon { width: 44px; height: 44px; border-radius: 10px; background: rgba(99,102,241,0.1); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin-bottom: 1.2rem; }
+.service-card h3 { font-family: var(--heading); font-weight: 700; font-size: 1.1rem; color: var(--white); margin-bottom: 0.7rem; }
+.service-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.65; }
 
-.process-section { background: var(--surface); }
+.why-section { background: var(--surface); }
+.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; }
+.why-list { list-style: none; display: flex; flex-direction: column; gap: 1.4rem; }
+.why-list li { display: flex; gap: 1rem; align-items: flex-start; }
+.why-num { width: 36px; height: 36px; border-radius: 8px; background: rgba(99,102,241,0.1); color: var(--accent); font-family: var(--heading); font-weight: 800; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size: 0.85rem; }
+.why-list h4 { font-family: var(--heading); font-weight: 700; font-size: 0.98rem; color: var(--white); margin-bottom: 0.3rem; }
+.why-list p { font-size: 0.87rem; color: var(--text-muted); line-height: 1.6; }
+.why-visual { background: var(--bg); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem; text-align: center; }
+.why-visual .big-num { font-family: var(--heading); font-size: 3rem; font-weight: 900; color: var(--accent2); letter-spacing: -0.03em; }
+.why-visual .big-lbl { font-family: var(--mono); font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.5rem; }
+
 .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
 .process-step { text-align: center; }
 .process-num { width: 48px; height: 48px; border-radius: 10px; background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.2); color: var(--accent); font-family: var(--heading); font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
@@ -61,7 +71,7 @@ h2 { font-family: var(--heading); font-weight: 800; font-size: clamp(2rem,4.5vw,
 
 footer { border-top: 1px solid var(--border); padding: 2.5rem 2rem; text-align: center; color: var(--text-dim); font-size: 0.8rem; }
 
-@media (max-width: 1024px) { .services-grid { grid-template-columns: 1fr; } .process-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 1024px) { .services-grid { grid-template-columns: 1fr; } .why-grid { grid-template-columns: 1fr; } .process-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 768px) { .section { padding: 4.5rem 1.5rem; } }
 </style>
 <script type="text/javascript">
@@ -74,58 +84,80 @@ footer { border-top: 1px solid var(--border); padding: 2.5rem 2rem; text-align: 
 <body>
 
 <nav>
-  <div class="nav-logo">Daniel <span>Fanto</span></div>
-  <div style="display:flex;align-items:center;gap:1.5rem;">
-    <a href="/aboutme" style="color:var(--text-muted);font-size:0.85rem;text-decoration:none;font-family:var(--heading);font-weight:600;">About Me</a>
-    <a href="#contact" class="nav-cta">Book a Consultation</a>
-  </div>
+  <div class="nav-logo">Daniel <span>Fanto</span> — AI Agents</div>
+  <a href="#contact" class="nav-cta">Book a Consultation</a>
 </nav>
 
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-inner">
-    <div class="hero-label">— Growth Services for Small & Mid-Size Businesses</div>
-    <h1>Website. Ads. <em>AI Systems.</em><br>One Person Who Ties It Together.</h1>
-    <p class="hero-sub">Most SMBs stitch together a web designer, an ad agency, and a mystery AI vendor who don't talk to each other. I build all three as one connected system — because growth isn't three separate problems.</p>
+    <div class="hero-label">— AI Agents & Implementation for SMBs</div>
+    <h1>Real AI Systems.<br>Not a <em>Chatbot Demo.</em></h1>
+    <p class="hero-sub">Most "AI for business" is a chatbot bolted onto a website. I build AI agents wired directly into how your business actually operates — answering, following up, scheduling, and doing real work.</p>
     <a href="#contact" class="btn-primary">Book a Free Consultation →</a>
+    <p class="trust-note"><span>✓</span> Built around your existing workflow &nbsp;&nbsp;<span>✓</span> No generic templates</p>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <div class="label">What I Do</div>
-    <h2>Four Services. One Growth System.</h2>
-    <p class="lead">Pick one, or use all four together — each is built to work with the others, not in isolation.</p>
+    <div class="label">What I Build</div>
+    <h2>AI Agents That Do Actual Work.</h2>
+    <p class="lead">Every agent is built around a specific job in your business — not a general-purpose chatbot dropped in and hoped for the best.</p>
     <div class="services-grid">
       <div class="service-card">
-        <div class="service-tag">Website Services</div>
-        <h3>Websites & Landing Pages</h3>
-        <p>Real, fast, conversion-built websites — starting with 3 free landing pages so you can see the work before you commit to anything.</p>
-        <a href="/web-services" class="service-link">See Website Services →</a>
+        <div class="service-icon">💬</div>
+        <h3>Customer Response Agents</h3>
+        <p>AI that answers real customer questions, qualifies leads, and hands off to you only when it actually matters.</p>
       </div>
       <div class="service-card">
-        <div class="service-tag">Advertising & Lead Generation</div>
-        <h3>Advertising & Lead Gen</h3>
-        <p>Paid acquisition and lead generation systems built on real performance-marketing experience — $150M+ in managed ad spend.</p>
-        <a href="/advertising" class="service-link">See Advertising Services →</a>
+        <div class="service-icon">📅</div>
+        <h3>Scheduling & Follow-Up Agents</h3>
+        <p>Automated booking, reminders, and follow-up sequences that keep leads warm without you lifting a finger.</p>
       </div>
       <div class="service-card">
-        <div class="service-tag">AI Agents & Implementation</div>
-        <h3>AI Agents & Automation</h3>
-        <p>Real AI systems wired into how your business actually runs — not a chatbot demo, actual operational leverage.</p>
-        <a href="/ai-agents" class="service-link">See AI Agent Services →</a>
+        <div class="service-icon">🔗</div>
+        <h3>Workflow Automation</h3>
+        <p>Agents that connect your existing tools — CRM, email, calendar, forms — so information actually flows between them.</p>
       </div>
       <div class="service-card">
-        <div class="service-tag">Consultation</div>
-        <h3>Strategy Consultation</h3>
-        <p>Not sure where to start? A single working session to map out what your business actually needs first — and in what order.</p>
-        <a href="#contact" class="service-link">Book a Consultation →</a>
+        <div class="service-icon">📊</div>
+        <h3>Reporting & Data Agents</h3>
+        <p>Automated reporting that pulls from your real data and gives you a clear picture, on schedule, with no manual work.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🛠️</div>
+        <h3>Custom Implementation</h3>
+        <p>If it's not a template, I build it — custom agents scoped to the exact process you need automated.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🧭</div>
+        <h3>Strategy & Consultation</h3>
+        <p>Not sure where AI actually fits in your business? We map it out together before anything gets built.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section process-section">
+<section class="section why-section">
+  <div class="container why-grid">
+    <div>
+      <div class="label" style="text-align:left;">Why It's Different</div>
+      <h2 style="text-align:left;">Implementation, Not Just a Tool.</h2>
+      <ul class="why-list">
+        <li><div class="why-num">01</div><div><h4>Wired Into Your Actual Systems</h4><p>Agents connect to the tools you already use — not a standalone dashboard you have to check separately.</p></div></li>
+        <li><div class="why-num">02</div><div><h4>Built Around a Real Job</h4><p>Every agent is scoped to a specific task with a measurable outcome, not "AI" for its own sake.</p></div></li>
+        <li><div class="why-num">03</div><div><h4>Direct Access to the Builder</h4><p>You're working with the person who built it, not a support ticket queue.</p></div></li>
+      </ul>
+    </div>
+    <div class="why-visual">
+      <div class="big-num">1:1</div>
+      <div class="big-lbl">Direct Build & Support</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
   <div class="container">
     <div class="label">How We'd Work Together</div>
     <h2>Simple, In Four Steps.</h2>
@@ -133,22 +165,22 @@ footer { border-top: 1px solid var(--border); padding: 2.5rem 2rem; text-align: 
       <div class="process-step">
         <div class="process-num">01</div>
         <h4>Free Consultation</h4>
-        <p>We talk through what's actually holding growth back.</p>
+        <p>We identify the actual bottleneck AI could solve.</p>
       </div>
       <div class="process-step">
         <div class="process-num">02</div>
-        <h4>A Real Plan</h4>
-        <p>You get a clear, prioritized plan — not a vague proposal.</p>
+        <h4>Agent Design</h4>
+        <p>A clear scope for what the agent does and doesn't do.</p>
       </div>
       <div class="process-step">
         <div class="process-num">03</div>
-        <h4>Build & Implement</h4>
-        <p>I build the system — website, ads, AI, or all three.</p>
+        <h4>Build & Integrate</h4>
+        <p>The agent gets built and connected to your real tools.</p>
       </div>
       <div class="process-step">
         <div class="process-num">04</div>
-        <h4>Iterate & Scale</h4>
-        <p>We refine based on real data, not guesswork.</p>
+        <h4>Test & Refine</h4>
+        <p>Real-world testing and adjustment until it actually works.</p>
       </div>
     </div>
   </div>
@@ -156,14 +188,14 @@ footer { border-top: 1px solid var(--border); padding: 2.5rem 2rem; text-align: 
 
 <section class="section cta-final" id="contact">
   <div class="container">
-    <h2>Let's Map Out Your Growth System.</h2>
-    <p>One free consultation — no pitch deck, no pressure. Just a real conversation about what your business actually needs.</p>
+    <h2>Let's Find Where AI Actually Helps.</h2>
+    <p>One free consultation — we'll map out where an AI agent could realistically save you time or win you leads.</p>
     <a href="#" data-cal-namespace="consult" data-cal-link="daniel-fanto-hdgre5/15min" data-cal-config='{"layout":"month_view"}' class="btn-primary">Book a Free Consultation →</a>
   </div>
 </section>
 
 <footer>
-  <p>© 2026 Daniel Fanto — Marketing & AI Services</p>
+  <p>© 2026 Daniel Fanto — AI Agents & Implementation</p>
 </footer>
 
 </body>
